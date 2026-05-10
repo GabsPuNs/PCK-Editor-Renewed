@@ -419,6 +419,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Editor\PckEditor.resx">
       <DependentUpon>PckEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Editor\SkinAdjustmentsEditorControl.resx">
       <DependentUpon>SkinAdjustmentsEditorControl.cs</DependentUpon>

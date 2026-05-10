@@ -118,6 +118,10 @@ namespace OMI.Formats.GameRule
             /// XMem compression is used on XBox 360.
             /// </summary>
             XMem,
+            /// <summary>
+            /// Zstd compression is used on Windows (Renewed fork)
+            /// </summary>
+            Zstd,
         }
 
         public struct GameRuleParameter

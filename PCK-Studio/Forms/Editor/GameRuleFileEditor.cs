@@ -259,6 +259,12 @@ namespace PckStudio.Forms.Editor
                 EditorValue.Header.CompressionType = GameRuleFile.CompressionType.XMem;
         }
 
+        private void windowsToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is ToolStripRadioButtonMenuItem radioButton && radioButton.Checked)
+                EditorValue.Header.CompressionType = GameRuleFile.CompressionType.Zstd;
+        }
+
         private void exportToJSONToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog1.FileName = "gameRules.json";

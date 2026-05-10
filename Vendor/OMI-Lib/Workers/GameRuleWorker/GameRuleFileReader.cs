@@ -7,6 +7,7 @@ using System.IO.Compression;
 using System.Diagnostics;
 using OMI.Formats.GameRule;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
+using ZstdSharp;
 
 namespace OMI.Workers.GameRule
 {
@@ -117,6 +118,7 @@ namespace OMI.Workers.GameRule
             Stream decompressedStream = _compressionType switch
             {
                 GameRuleFile.CompressionType.Zlib => new InflaterInputStream(stream),
+                GameRuleFile.CompressionType.Zstd => new DecompressionStream(stream),
                 GameRuleFile.CompressionType.Deflate => new DeflateStream(stream, CompressionLevel.Optimal),
                 GameRuleFile.CompressionType.XMem => new LzxDecoderStream(stream, decompressedSize, compressedSize),
                 _ => throw new NotImplementedException(),

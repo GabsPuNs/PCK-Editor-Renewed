@@ -1759,7 +1759,7 @@
     <value>22</value>
   </data>
   <data name="LittleEndianCheckBox.Text" xml:space="preserve">
-    <value>Save as Switch/Vita/PS4 PCK</value>
+    <value>Save as Switch/Vita/PS4/XOne/Windows PCK</value>
   </data>
   <data name="&gt;&gt;LittleEndianCheckBox.Name" xml:space="preserve">
     <value>LittleEndianCheckBox</value>

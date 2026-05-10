@@ -404,9 +404,10 @@ namespace PckStudio.Controls
         {
             const string cDEFLATE = "PS3";
             const string cXMEM = "Xbox 360";
+            const string cZSTD = "Windows (Renewed Fork)";
             const string cZLIB = "Other Platforms";
 
-            ItemSelectionPopUp dialog = new ItemSelectionPopUp(cZLIB, cDEFLATE, cXMEM);
+            ItemSelectionPopUp dialog = new ItemSelectionPopUp(cZLIB, cDEFLATE, cXMEM, cZSTD);
             dialog.LabelText = "Type";
             dialog.ButtonText = "Ok";
             if (dialog.ShowDialog() != DialogResult.OK)
@@ -417,6 +418,7 @@ namespace PckStudio.Controls
                 cDEFLATE => GameRuleFile.CompressionType.Deflate,
                 cXMEM => GameRuleFile.CompressionType.XMem,
                 cZLIB => GameRuleFile.CompressionType.Zlib,
+                cZSTD => GameRuleFile.CompressionType.Zstd,
                 _ => GameRuleFile.CompressionType.Unknown
             };
 

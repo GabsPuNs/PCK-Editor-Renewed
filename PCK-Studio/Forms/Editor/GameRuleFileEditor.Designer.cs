@@ -55,6 +55,7 @@
             this.wiiUPSVitaToolStripMenuItem = new PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem();
             this.pS3ToolStripMenuItem = new PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem();
             this.xbox360ToolStripMenuItem = new PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem();
+            this.windowsToolStripMenuItem = new PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.MessageContextMenu.SuspendLayout();
@@ -246,7 +247,7 @@
             // typeToolStripMenuItem
             // 
             this.typeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.typeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.wiiUPSVitaToolStripMenuItem, this.pS3ToolStripMenuItem, this.xbox360ToolStripMenuItem });
+            this.typeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.wiiUPSVitaToolStripMenuItem, this.pS3ToolStripMenuItem, this.xbox360ToolStripMenuItem, this.windowsToolStripMenuItem });
             this.typeToolStripMenuItem.Name = "typeToolStripMenuItem";
             this.typeToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.typeToolStripMenuItem.Text = "Type";
@@ -258,7 +259,7 @@
             this.wiiUPSVitaToolStripMenuItem.Name = "wiiUPSVitaToolStripMenuItem";
             this.wiiUPSVitaToolStripMenuItem.ShowShortcutKeys = false;
             this.wiiUPSVitaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.wiiUPSVitaToolStripMenuItem.Text = "Wii U, PS Vita";
+            this.wiiUPSVitaToolStripMenuItem.Text = "Other Platforms";
             this.wiiUPSVitaToolStripMenuItem.CheckedChanged += new System.EventHandler(this.wiiUPSVitaToolStripMenuItem_CheckedChanged);
             // 
             // pS3ToolStripMenuItem
@@ -282,6 +283,18 @@
             this.xbox360ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.xbox360ToolStripMenuItem.Text = "Xbox 360";
             this.xbox360ToolStripMenuItem.CheckedChanged += new System.EventHandler(this.xbox360ToolStripMenuItem_CheckedChanged);
+            // 
+            // windowsToolStripMenuItem
+            // 
+            this.windowsToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.windowsToolStripMenuItem.Checked = true;
+            this.windowsToolStripMenuItem.CheckOnClick = true;
+            this.windowsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
+            this.windowsToolStripMenuItem.ShowShortcutKeys = false;
+            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.windowsToolStripMenuItem.Text = "Windows (Renewed Fork)";
+            this.windowsToolStripMenuItem.CheckedChanged += new System.EventHandler(this.windowsToolStripMenuItem_CheckedChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -369,5 +382,6 @@
         private PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem wiiUPSVitaToolStripMenuItem;
         private PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem pS3ToolStripMenuItem;
         private PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem xbox360ToolStripMenuItem;
+        private PckStudio.ToolboxItems.ToolStripRadioButtonMenuItem windowsToolStripMenuItem;
     }
 }
