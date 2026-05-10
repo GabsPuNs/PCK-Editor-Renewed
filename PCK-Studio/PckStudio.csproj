@@ -1,0 +1,842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+    <DisableFody Condition="'$(Configuration)' == 'Debug'">true</DisableFody>
+    <DefineConstants Condition="'$(Configuration)' != 'Debug'">NDEBUG</DefineConstants>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0ACAAEDE-93F5-4B5D-B8D7-A0C43359C0D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PckStudio</RootNamespace>
+    <AssemblyName>PCK-Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>CS0618</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>$(DefineConstants);TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Beta\</OutputPath>
+    <DefineConstants>$(DefineConstants);BETA;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>../ProjectLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>PckStudio.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1A350BCC742C98A4A39065C40B7D81A6F94CE8C1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Editor\BoxEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Editor\BoxEditorControl.Designer.cs">
+      <DependentUpon>BoxEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Editor\SkinAdjustmentsEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Editor\SkinAdjustmentsEditorControl.Designer.cs">
+      <DependentUpon>SkinAdjustmentsEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interface\CustomTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Editor\EditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PageClosingEventArgs.cs" />
+    <Compile Include="Controls\Editor\PckEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Editor\PckEditor.Designer.cs">
+      <DependentUpon>PckEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interface\PictureButtonControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Interface\PictureButtonControl.Designer.cs">
+      <DependentUpon>PictureButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\FilterPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\FilterPrompt.Designer.cs">
+      <DependentUpon>FilterPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContributorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContributorsForm.Designer.cs">
+      <DependentUpon>ContributorsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\ModelEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\ModelEditor.Designer.cs">
+      <DependentUpon>ModelEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\SkinAdjustmentsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\SkinAdjustmentsEditor.Designer.cs">
+      <DependentUpon>SkinAdjustmentsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\ApplicationScope.cs" />
+    <Compile Include="Internal\AppResourceManager.cs" />
+    <Compile Include="Internal\CommitInfo.cs" />
+    <Compile Include="Internal\Entities.cs" />
+    <Compile Include="Internal\RichPresenceClient.cs" />
+    <Compile Include="Internal\PckNodeSorter.cs" />
+    <Compile Include="Internal\SettingsManager.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Rendering\ModelRenderer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rendering\ModelRenderer.Designer.cs">
+      <DependentUpon>ModelRenderer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rendering\SceneViewport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rendering\SkinRenderer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rendering\SkinRenderer.Designer.cs">
+      <DependentUpon>SkinRenderer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolboxItems\BlendPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolboxItems\GithubUserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolboxItems\GithubUserPanel.Designer.cs">
+      <DependentUpon>GithubUserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolboxItems\InterpolationPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolboxItems\ToolStripRadioButtonMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="External\API\Miles\BinkaConverter.cs" />
+    <Compile Include="Forms\Additional-Popups\NumericPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\NumericPrompt.Designer.cs">
+      <DependentUpon>NumericPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AppSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AppSettingsForm.Designer.cs">
+      <DependentUpon>AppSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\TextureAtlasEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\TextureAtlasEditor.Designer.cs">
+      <DependentUpon>TextureAtlasEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="External\API\Miles\Binka.cs" />
+    <Compile Include="Forms\Features\CemuPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Features\CemuPanel.Designer.cs">
+      <DependentUpon>CemuPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\EntityForms\AddEntry.cs" />
+    <Compile Include="Forms\Additional-Popups\Loc\AddLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Loc\AddLanguage.Designer.cs">
+      <DependentUpon>AddLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\CreateTexturePackPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\CreateTexturePackPrompt.Designer.cs">
+      <DependentUpon>CreateTexturePackPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddFilePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddFilePrompt.Designer.cs">
+      <DependentUpon>AddFilePrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\TextPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\TextPrompt.Designer.cs">
+      <DependentUpon>TextPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\MultiTextPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\MultiTextPrompt.Designer.cs">
+      <DependentUpon>MultiTextPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolboxItems\AnimationPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\MaterialsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\MaterialsEditor.Designer.cs">
+      <DependentUpon>MaterialsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\BehaviourEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\BehaviourEditor.Designer.cs">
+      <DependentUpon>BehaviourEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\COLEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\COLEditor.Designer.cs">
+      <DependentUpon>COLEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\LOCEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\LOCEditor.Designer.cs">
+      <DependentUpon>LOCEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\ChangeTile.cs" />
+    <Compile Include="Forms\Additional-Popups\Animation\SetBulkSpeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\SetBulkSpeed.Designer.cs">
+      <DependentUpon>SetBulkSpeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\ItemSelectionPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\ItemSelectionPopUp.Designer.cs">
+      <DependentUpon>ItemSelectionPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddParameterPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddParameterPrompt.Designer.cs">
+      <DependentUpon>AddParameterPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddSkinPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\AddSkinPrompt.Designer.cs">
+      <DependentUpon>AddSkinPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\AdvancedOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Skins-And-Textures\AdvancedOptions.Designer.cs">
+      <DependentUpon>AdvancedOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\GameRuleFileEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\GameRuleFileEditor.Designer.cs">
+      <DependentUpon>GameRuleFileEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Grf\AddParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Grf\AddParameter.Designer.cs">
+      <DependentUpon>AddParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\InProgressPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\InProgressPrompt.Designer.cs">
+      <DependentUpon>InProgressPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\BoxEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Features\PckManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Features\PckManager.Designer.cs">
+      <DependentUpon>PckManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\BoxEditor.Designer.cs">
+      <DependentUpon>BoxEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\CustomSkinEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\CustomSkinEditor.Designer.cs">
+      <DependentUpon>CustomSkinEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\AnimationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\AnimationEditor.Designer.cs">
+      <DependentUpon>AnimationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\FrameEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Additional-Popups\Animation\FrameEditor.Designer.cs">
+      <DependentUpon>FrameEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editor\AudioEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editor\AudioEditor.Designer.cs">
+      <DependentUpon>AudioEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Editor\BoxEditorControl.resx">
+      <DependentUpon>BoxEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Editor\PckEditor.resx">
+      <DependentUpon>PckEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Editor\SkinAdjustmentsEditorControl.resx">
+      <DependentUpon>SkinAdjustmentsEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Interface\PictureButtonControl.resx">
+      <DependentUpon>PictureButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\FilterPrompt.resx">
+      <DependentUpon>FilterPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContributorsForm.resx">
+      <DependentUpon>ContributorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\ModelEditor.resx">
+      <DependentUpon>ModelEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\SkinAdjustmentsEditor.resx">
+      <DependentUpon>SkinAdjustmentsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Features\CemuPanel.resx">
+      <DependentUpon>CemuPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Loc\AddLanguage.resx">
+      <DependentUpon>AddLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\CreateTexturePackPrompt.resx">
+      <DependentUpon>CreateTexturePackPrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\AddFilePrompt.resx">
+      <DependentUpon>AddFilePrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\NumericPrompt.resx">
+      <DependentUpon>NumericPrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\TextPrompt.resx">
+      <DependentUpon>TextPrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\MultiTextPrompt.resx">
+      <DependentUpon>MultiTextPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\MaterialsEditor.resx">
+      <DependentUpon>MaterialsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\BehaviourEditor.resx">
+      <DependentUpon>BehaviourEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\COLEditor.ja.resx">
+      <DependentUpon>COLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\COLEditor.resx">
+      <DependentUpon>COLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\LOCEditor.ja.resx">
+      <DependentUpon>LOCEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\LOCEditor.resx">
+      <DependentUpon>LOCEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Animation\SetBulkSpeed.resx">
+      <DependentUpon>SetBulkSpeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\ItemSelectionPopUp.resx">
+      <DependentUpon>ItemSelectionPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\AddParameterPrompt.ja.resx">
+      <DependentUpon>AddParameterPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\AddParameterPrompt.resx">
+      <DependentUpon>AddParameterPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\AddSkinPrompt.ja.resx">
+      <DependentUpon>AddSkinPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\AddSkinPrompt.resx">
+      <DependentUpon>AddSkinPrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\AdvancedOptions.ja.resx">
+      <DependentUpon>AdvancedOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Skins-And-Textures\AdvancedOptions.resx">
+      <DependentUpon>AdvancedOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\GameRuleFileEditor.resx">
+      <DependentUpon>GameRuleFileEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Grf\AddParameter.resx">
+      <DependentUpon>AddParameter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\InProgressPrompt.resx">
+      <DependentUpon>InProgressPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Features\PckManager.resx">
+      <DependentUpon>PckManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\BoxEditor.resx">
+      <DependentUpon>BoxEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AppSettingsForm.resx">
+      <DependentUpon>AppSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\TextureAtlasEditor.resx">
+      <DependentUpon>TextureAtlasEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ja.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\CustomSkinEditor.ja.resx">
+      <DependentUpon>CustomSkinEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\CustomSkinEditor.resx">
+      <DependentUpon>CustomSkinEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\AnimationEditor.resx">
+      <DependentUpon>AnimationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Additional-Popups\Animation\FrameEditor.resx">
+      <DependentUpon>FrameEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editor\AudioEditor.resx">
+      <DependentUpon>AudioEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rendering\ModelRenderer.resx">
+      <DependentUpon>ModelRenderer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rendering\SkinRenderer.resx">
+      <DependentUpon>SkinRenderer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolboxItems\GithubUserPanel.resx">
+      <DependentUpon>GithubUserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CommunityKey.snk" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atlases\bannerData.json" />
+    <None Include="Resources\atlases\blockData.json" />
+    <None Include="Resources\atlases\entityBehavioursData.json" />
+    <None Include="Resources\atlases\entityMaterialsData.json" />
+    <None Include="Resources\atlases\entityModelsData.json" />
+    <None Include="Resources\atlases\experienceOrbData.json" />
+    <None Include="Resources\atlases\explosionData.json" />
+    <None Include="Resources\atlases\itemData.json" />
+    <None Include="Resources\atlases\mapIconData.json" />
+    <None Include="Resources\atlases\moonPhaseData.json" />
+    <None Include="Resources\atlases\paintingData.json" />
+    <None Include="Resources\atlases\particleData.json" />
+    <None Include="Resources\entityBehavioursData.json" />
+    <None Include="Resources\entityMaterialsData.json" />
+    <None Include="Resources\entityModelsData.json" />
+    <None Include="Resources\shader\framebufferFragmentShader.glsl" />
+    <None Include="Resources\shader\framebufferVertexShader.glsl" />
+    <None Include="Resources\shader\plainColorFragmentShader.glsl" />
+    <None Include="Resources\shader\plainColorVertexShader.glsl" />
+    <None Include="Resources\shader\texturedCubeGeometryShader.glsl" />
+    <None Include="Resources\shader\skyboxFragmentShader.glsl" />
+    <None Include="Resources\shader\skyboxVertexShader.glsl" />
+    <None Include="Resources\skybox_texture.png" />
+    <None Include="Resources\shader\texturedCubeVertexShader.glsl" />
+    <None Include="Resources\TexturePackIcon.png" />
+    <None Include="Resources\binka\binkawin.asi" />
+    <None Include="Resources\fileTemplates\1.91_colours.col" />
+    <None Include="Resources\fileTemplates\tu12colours.col" />
+    <None Include="Resources\fileTemplates\tu13colours.col" />
+    <None Include="Resources\fileTemplates\tu14colours.col" />
+    <None Include="Resources\fileTemplates\tu19colours.col" />
+    <None Include="Resources\fileTemplates\tu31colours.col" />
+    <None Include="Resources\fileTemplates\tu32colours.col" />
+    <None Include="Resources\fileTemplates\tu43colours.col" />
+    <None Include="Resources\fileTemplates\tu46colours.col" />
+    <None Include="Resources\fileTemplates\tu51colours.col" />
+    <None Include="Resources\fileTemplates\tu53colours.col" />
+    <None Include="Resources\fileTemplates\tu54colours.col" />
+    <None Include="Resources\fileTemplates\tu69colours.col" />
+    <None Include="Resources\external\Youtube.png" />
+    <None Include="Resources\pckClosed.png" />
+    <None Include="Resources\external\Discord.png" />
+    <None Include="Resources\icons\clock.png" />
+    <None Include="Resources\changeTile.png" />
+    <None Include="Resources\HamburgerMenuIcon.png" />
+    <None Include="Resources\pack.png" />
+    <None Include="Resources\external\Xbox.png" />
+    <None Include="Resources\external\PS3.png" />
+    <None Include="Resources\external\WiiU.png" />
+    <None Include="Resources\pckOpen.png" />
+    <None Include="Resources\pckDrop.png" />
+    <None Include="Resources\binka\binka_encode.exe" />
+    <None Include="Resources\binka\mss32.dll" />
+    <None Include="Resources\anim_editor\classic_template.png" />
+    <None Include="Resources\anim_editor\slim_template.png" />
+    <None Include="Resources\iconImageList\COL ICON.png" />
+    <None Include="Resources\iconImageList\SKINS ICON.png" />
+    <None Include="Resources\iconImageList\MODELS ICON.png" />
+    <None Include="Resources\iconImageList\GRF ICON.png" />
+    <None Include="Resources\iconImageList\GRH ICON.png" />
+    <None Include="Resources\iconImageList\INFO ICON.png" />
+    <None Include="Resources\iconImageList\CAPE ICON.png" />
+    <None Include="Resources\iconImageList\CLASSIC SKIN ICON.png" />
+    <None Include="Resources\iconImageList\TEXTURE ICON.png" />
+    <None Include="Resources\AddTexture.png" />
+    <None Include="Resources\iconImageList\BEHAVIOURS ICON.png" />
+    <None Include="Resources\Comparison.png" />
+    <None Include="Resources\iconImageList\ENTITY MATERIALS ICON.png" />
+    <None Include="Resources\iconImageList\blank.png" />
+    <None Include="Resources\atlases\additional_mapicons.png" />
+    <None Include="Resources\atlases\map_icons.png" />
+    <None Include="Resources\atlases\banners.png" />
+    <Content Include="Resources\anim_editor\armor_body.png" />
+    <Content Include="Resources\anim_editor\armor_head.png" />
+    <Content Include="Resources\anim_editor\armor_left_arm.png" />
+    <Content Include="Resources\anim_editor\armor_left_leg.png" />
+    <Content Include="Resources\anim_editor\armor_right_arm.png" />
+    <Content Include="Resources\anim_editor\armor_right_leg.png" />
+    <Content Include="Resources\anim_editor\classic_head.png" />
+    <Content Include="Resources\anim_editor\slim_body.png" />
+    <Content Include="Resources\anim_editor\slim_head.png" />
+    <Content Include="Resources\anim_editor\slim_left_arm.png" />
+    <Content Include="Resources\anim_editor\slim_left_leg.png" />
+    <Content Include="Resources\anim_editor\slim_right_arm.png" />
+    <Content Include="Resources\anim_editor\slim_right_leg.png" />
+    <Content Include="Resources\anim_editor\wide_body.png" />
+    <Content Include="Resources\anim_editor\wide_head.png" />
+    <Content Include="Resources\anim_editor\wide_left_arm.png" />
+    <Content Include="Resources\anim_editor\wide_legs.png" />
+    <Content Include="Resources\anim_editor\wide_right_arm.png" />
+    <Content Include="Resources\atlases\entities.png" />
+    <None Include="Resources\atlases\experience_orbs.png" />
+    <None Include="Resources\atlases\explosion.png" />
+    <Content Include="Resources\atlases\items.png" />
+    <Content Include="Resources\atlases\moon_phases.png" />
+    <None Include="Resources\atlases\particles.png" />
+    <None Include="Resources\atlases\paintings.png" />
+    <Content Include="Resources\atlases\terrain.png" />
+    <None Include="Resources\shader\texturedCubeFragmentShader.glsl" />
+    <None Include="Resources\armor.png" />
+    <None Include="Resources\external\trello.png" />
+    <None Include="Resources\icons\file_copy.png" />
+    <Content Include="Resources\iconImageList\CUSTOM SKIN ICON.png" />
+    <Content Include="Resources\iconImageList\empty.png" />
+    <Content Include="Resources\iconImageList\MODERN SKIN ICON.png" />
+    <Content Include="Resources\iconImageList\SLIM SKIN ICON.png" />
+    <Content Include="Resources\icons\file_delete.png" />
+    <Content Include="Resources\icons\file_empty.png" />
+    <None Include="Resources\icons\file_export.png" />
+    <None Include="Resources\icons\file_import.png" />
+    <Content Include="Resources\icons\file_new.png" />
+    <None Include="Resources\icons\file_paste.png" />
+    <None Include="Resources\icons\file_restore.png" />
+    <Content Include="Resources\icons\music.png" />
+    <None Include="Resources\icons\ranch.png" />
+    <Content Include="Resources\icons\Replace.png" />
+    <Content Include="Resources\icons\Save.png" />
+    <Content Include="Resources\NoImageFound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AnimatedGif">
+      <Version>1.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Costura.Fody">
+      <Version>6.1.0</Version>
+      <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MetroFramework">
+      <Version>1.2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="MetroFramework.Design">
+      <Version>1.2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="MetroFramework.RunTime">
+      <Version>1.2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="MetroModernUI">
+      <Version>1.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="NAudio.Core">
+      <Version>2.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="NAudio.WinMM">
+      <Version>2.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Octokit">
+      <Version>14.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Drawing.Common">
+      <Version>10.0.7</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.RegularExpressions">
+      <Version>4.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.6.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PckStudio.Core\PckStudio.Core.csproj">
+      <Project>{345eabed-f0d1-4d04-b409-babdef747352}</Project>
+      <Name>PckStudio.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PckStudio.Rendering\PckStudio.Rendering.csproj">
+      <Project>{b1e19d0f-6dd5-4d91-9b45-9818759ca8ef}</Project>
+      <Name>PckStudio.Rendering</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PckStudio.ModelSupport\PckStudio.ModelSupport.csproj">
+      <Project>{43bcacd7-5405-4499-9b45-e1435ac03c26}</Project>
+      <Name>PckStudio.ModelSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\OMI-Lib\OMI Filetype Library.csproj">
+      <Project>{693AEBC1-293D-4DF0-BCAE-26A1099FE7BB}</Project>
+      <Name>OMI Filetype Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vendor\SharpMss32\SharpMss32.csproj">
+      <Project>{e8d0b671-3ab1-48b6-a767-58df67bd5d11}</Project>
+      <Name>SharpMss32</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="GetGitInfo" BeforeTargets="WriteGitInfo" Condition="'$(BuildHash)' == ''">
+    <!-- write hash and branch to console.-->
+    <Exec Command="git -C $(ProjectDir) describe --always" ConsoleToMsBuild="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="GitHash" />
+    </Exec>
+    <Exec Command="git -C $(ProjectDir) branch --show-current" ConsoleToMsBuild="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="GitBranch" />
+    </Exec>
+    <PropertyGroup>
+      <BuildHash>$(GitHash)</BuildHash>
+      <BuildBranch>$(GitBranch)</BuildBranch>
+    </PropertyGroup>
+  </Target>
+  <Target Name="WriteGitInfo" BeforeTargets="CoreCompile">
+    <!-- names the obj/.../GitAssemblyInfo.cs file -->
+    <PropertyGroup>
+      <GitAssemblyInfoFile>$(IntermediateOutputPath)GitAssemblyInfo.cs</GitAssemblyInfoFile>
+    </PropertyGroup>
+    <!-- includes the GitAssemblyInfo for compilation into your project -->
+    <ItemGroup>
+      <Compile Include="$(GitAssemblyInfoFile)" />
+    </ItemGroup>
+    <!-- defines the AssemblyMetadata attribute that will be written -->
+    <ItemGroup>
+      <AssemblyAttributes Include="AssemblyMetadata">
+        <_Parameter1>GitHash</_Parameter1>
+        <_Parameter2>$(BuildHash)</_Parameter2>
+      </AssemblyAttributes>
+      <AssemblyAttributes Include="AssemblyMetadata">
+        <_Parameter1>GitBranch</_Parameter1>
+        <_Parameter2>$(BuildBranch)</_Parameter2>
+      </AssemblyAttributes>
+    </ItemGroup>
+    <!-- writes the attribute to the GitAssemblyInfo file -->
+    <WriteCodeFragment Language="C#" OutputFile="$(GitAssemblyInfoFile)" AssemblyAttributes="@(AssemblyAttributes)" />
+  </Target>
+  <Target Name="Delete PDBs" AfterTargets="Build" Condition=" '$(Configuration)' != 'Debug' ">
+    <Exec Command="del $(OutputPath)*.pdb" />
+  </Target>
+  <Target Name="ZipOutputPath" AfterTargets="Build" Condition="'$(Configuration)' == 'Beta'">
+    <PropertyGroup>
+      <StringDate>$([System.DateTime]::Now.ToString('yyyy-MM-dd'))</StringDate>
+    </PropertyGroup>
+    <ZipDirectory SourceDirectory="$(OutputPath)" DestinationFile="$(OutputPath)\..\$(AssemblyName)_$(Configuration)@$(BuildBranch)_$(StringDate).zip" Overwrite="true" />
+  </Target>
+</Project>
